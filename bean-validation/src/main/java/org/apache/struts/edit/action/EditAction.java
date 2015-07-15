@@ -1,6 +1,9 @@
 package org.apache.struts.edit.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.CustomValidator;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 import org.apache.struts.edit.model.Person;
 import org.apache.struts.edit.model.State;
 import org.apache.struts.edit.service.EditService;
@@ -47,6 +50,8 @@ public class EditAction extends ActionSupport {
 		return personBean;
 	}
 
+	@RequiredStringValidator(type = ValidatorType.FIELD, message = "Price Required")
+	@CustomValidator(type = "numericField", message = "This really does nothing.")
 	public void setPersonBean(Person person) {
 		personBean = person;
 	}

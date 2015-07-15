@@ -14,7 +14,7 @@
 
 <p>Use the form below to edit your information.</p>
 
-<s:form action="save" method="post">
+<s:form action="save" method="post" validate="true">
     <s:textfield key="personBean.firstName"/>
     <s:textfield key="personBean.lastName"/>
     <s:textfield key="personBean.email"/>
